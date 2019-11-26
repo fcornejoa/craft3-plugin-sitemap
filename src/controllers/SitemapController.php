@@ -92,6 +92,17 @@ class SitemapController extends Controller
                 continue;
             }
 
+            // Get entry fields
+            $entry = \craft\elements\Entry::find()
+            ->id($item["id"])
+            ->one();
+
+            // Check for index fields
+            // if not index field it continues
+            if (!$entry['index']) {
+                continue;
+            }
+
             $url = $dom->createElement('url');
             $urlset->appendChild($url);
             $url->appendChild($dom->createElement('loc', $loc));
