@@ -4,14 +4,14 @@
  *
  * Craft 3 plugin that provides an easy way to enable and manage a xml sitemap for search engines like Google
  *
- * @link      https://github.com/Dolphiq/craft3-plugin-sitemap
+ * @link      https://github.com/copper/craft3-plugin-sitemap
  * @copyright Copyright (c) 2017 Johan Zandstra
  */
 
-namespace dolphiq\sitemap\controllers;
+namespace copper\sitemap\controllers;
 
-use dolphiq\sitemap\records\SitemapEntry;
-use dolphiq\sitemap\Sitemap;
+use copper\sitemap\records\SitemapEntry;
+use copper\sitemap\Sitemap;
 
 use Craft;
 use craft\db\Query;
@@ -69,7 +69,7 @@ class SettingsController extends Controller
             ->innerJoin('{{%sections_sites}} sections_sites', '[[sections_sites.sectionId]] = [[sections.id]] AND [[sections_sites.hasUrls]] = 1')
             ->leftJoin('{{%entries}} entries', '[[sections.id]] = [[entries.sectionId]]')
             ->leftJoin('{{%elements}} elements', '[[entries.id]] = [[elements.id]] AND [[elements.enabled]] = 1')
-            ->leftJoin('{{%dolphiq_sitemap_entries}} sitemap_entries', '[[sections.id]] = [[sitemap_entries.linkId]] AND [[sitemap_entries.type]] = "section"')
+            ->leftJoin('{{%copper_sitemap_entries}} sitemap_entries', '[[sections.id]] = [[sitemap_entries.linkId]] AND [[sitemap_entries.type]] = "section"')
 
             ->groupBy(['sections.id'])
         ->orderBy(['type' => SORT_ASC],['name' => SORT_ASC]);
@@ -92,7 +92,7 @@ class SettingsController extends Controller
             ->innerJoin('{{%categorygroups_sites}} categorygroups_sites', '[[categorygroups_sites.groupId]] = [[categorygroups.id]] AND [[categorygroups_sites.hasUrls]] = 1')
             ->leftJoin('{{%entries}} entries', '[[categories.id]] = [[entries.sectionId]]')
             ->leftJoin('{{%elements}} elements', '[[entries.id]] = [[elements.id]] AND [[elements.enabled]] = 1')
-            ->leftJoin('{{%dolphiq_sitemap_entries}} sitemap_entries', '[[categorygroups.id]] = [[sitemap_entries.linkId]] AND [[sitemap_entries.type]] = "category"')
+            ->leftJoin('{{%copper_sitemap_entries}} sitemap_entries', '[[categorygroups.id]] = [[sitemap_entries.linkId]] AND [[sitemap_entries.type]] = "category"')
             ->groupBy(['categorygroups.id'])
             ->orderBy(['name' => SORT_ASC]);
     }

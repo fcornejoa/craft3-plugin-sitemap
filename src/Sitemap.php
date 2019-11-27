@@ -4,19 +4,19 @@
  *
  * Craft 3 plugin that provides an easy way to enable and manage a xml sitemap for search engines like Google
  *
- * @link      https://github.com/Dolphiq/craft3-plugin-sitemap
+ * @link      https://github.com/copper/craft3-plugin-sitemap
  * @copyright Copyright (c) 2017 Johan Zandstra
  */
 
-namespace dolphiq\sitemap;
+namespace copper\sitemap;
 
 use Craft;
 use craft\base\Plugin;
 use craft\events\RegisterUrlRulesEvent;
 use craft\services\ProjectConfig;
 use craft\web\UrlManager;
-use dolphiq\sitemap\models\Settings;
-use dolphiq\sitemap\services\SitemapService;
+use copper\sitemap\models\Settings;
+use copper\sitemap\services\SitemapService;
 use yii\base\Event;
 
 /**
@@ -192,7 +192,7 @@ class Sitemap extends Plugin
     /**
      * Returns the Service to handle project config
      *
-     * @return \dolphiq\sitemap\services\SitemapService
+     * @return \copper\sitemap\services\SitemapService
      */
     public function getSiteMap():SitemapService
     {

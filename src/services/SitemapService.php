@@ -4,11 +4,11 @@
  *
  * Craft 3 plugin that provides an easy way to enable and manage a xml sitemap for search engines like Google
  *
- * @link      https://github.com/Dolphiq/craft3-plugin-sitemap
+ * @link      https://github.com/copper/craft3-plugin-sitemap
  * @copyright Copyright (c) 2017 Johan Zandstra
  */
 
-namespace dolphiq\sitemap\services;
+namespace copper\sitemap\services;
 
 use Craft;
 use craft\base\Component;
@@ -17,7 +17,7 @@ use craft\events\ConfigEvent;
 use craft\events\RebuildConfigEvent;
 use craft\helpers\Db;
 use craft\helpers\StringHelper;
-use dolphiq\sitemap\records\SitemapEntry;
+use copper\sitemap\records\SitemapEntry;
 
 /**
  * SitemapService Service
@@ -37,14 +37,14 @@ class SitemapService extends Component
     /**
      * Key for the project config
      */
-    const PROJECT_CONFIG_KEY = 'dolphiq_sitemap_entries';
+    const PROJECT_CONFIG_KEY = 'copper_sitemap_entries';
     // Public Methods
     // =========================================================================
 
     /**
      * Save a new entry to the project config
      *
-     * @param \dolphiq\sitemap\records\SitemapEntry $record
+     * @param \copper\sitemap\records\SitemapEntry $record
      *
      * @throws \yii\base\ErrorException
      * @throws \yii\base\Exception
@@ -95,7 +95,7 @@ class SitemapService extends Component
     /**
      * Delete an entry from project config
      *
-     * @param \dolphiq\sitemap\records\SitemapEntry $record
+     * @param \copper\sitemap\records\SitemapEntry $record
      */
     public function deleteEntry(SitemapEntry $record)
     {

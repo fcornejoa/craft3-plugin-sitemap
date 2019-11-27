@@ -1,5 +1,5 @@
 {
-    "name": "fcornejo/sitemap",
+    "name": "copper/sitemap",
     "description": "Craft 3 plugin that provides an easy way to provide and manage a XML sitemap for search engines like Google and Bing",
     "type": "craft-plugin",
     "version": "1.2.0",
@@ -33,11 +33,11 @@
     ],
     "autoload": {
         "psr-4": {
-          "fcornejo\\sitemap\\": "src/"
+          "copper\\sitemap\\": "src/"
         }
     },
     "extra": {
-        "name": "XML Sitemap",
+        "name": "Copper mod XML Sitemap",
         "handle": "sitemap",
         "schemaVersion": "1.0.2",
         "developer": "Dolphiq",
@@ -45,11 +45,11 @@
         "hasCpSettings": true,
         "hasCpSection": false,
         "components": {
-            "sitemapService": "fcornejo\\sitemap\\services\\SitemapService"
+            "sitemapService": "copper\\sitemap\\services\\SitemapService"
         },
         "documentationUrl": "https://github.com/Dolphiq/craft3-plugin-sitemap/blob/master/README.md",
         "changelogUrl": "https://github.com/Dolphiq/craft3-plugin-sitemap/blob/master/CHANGELOG.md",
 
-        "class": "fcornejo\\sitemap\\Sitemap"
+        "class": "copper\\sitemap\\Sitemap"
     }
 }

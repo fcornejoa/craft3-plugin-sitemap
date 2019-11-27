@@ -4,11 +4,11 @@
  *
  * Craft 3 plugin that provides an easy way to enable and manage a xml sitemap for search engines like Google
  *
- * @link      https://github.com/Dolphiq/craft3-plugin-sitemap
+ * @link      https://github.com/copper/craft3-plugin-sitemap
  * @copyright Copyright (c) 2017 Johan Zandstra
  */
 
-namespace dolphiq\sitemap\records;
+namespace copper\sitemap\records;
 
 use craft\db\ActiveRecord;
 
@@ -75,6 +75,6 @@ class SitemapEntry extends ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%dolphiq_sitemap_entries}}';
+        return '{{%copper_sitemap_entries}}';
     }
 }

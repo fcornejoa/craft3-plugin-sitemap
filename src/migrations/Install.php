@@ -4,13 +4,13 @@
  *
  * Craft 3 plugin that provides an easy way to enable and manage a xml sitemap for search engines like Google
  *
- * @link      https://github.com/Dolphiq/craft3-plugin-sitemap
+ * @link      https://github.com/copper/craft3-plugin-sitemap
  * @copyright Copyright (c) 2017 Johan Zandstra
  */
 
-namespace dolphiq\sitemap\migrations;
+namespace copper\sitemap\migrations;
 
-use dolphiq\sitemap\Sitemap;
+use copper\sitemap\Sitemap;
 
 use Craft;
 use craft\config\DbConfig;
@@ -98,11 +98,11 @@ class Install extends Migration
         $tablesCreated = false;
 
     // sitemap_sitemaprecord table
-        $tableSchema = Craft::$app->db->schema->getTableSchema('{{%dolphiq_sitemap_entries}}');
+        $tableSchema = Craft::$app->db->schema->getTableSchema('{{%copper_sitemap_entries}}');
         if ($tableSchema === null) {
             $tablesCreated = true;
             $this->createTable(
-                '{{%dolphiq_sitemap_entries}}',
+                '{{%copper_sitemap_entries}}',
                 [
                     'id' => $this->primaryKey(),
                     'dateCreated' => $this->dateTime()->notNull(),
@@ -130,11 +130,11 @@ class Install extends Migration
     // sitemap_sitemaprecord table
         $this->createIndex(
             $this->db->getIndexName(
-                '{{%dolphiq_sitemap_entries}}',
+                '{{%copper_sitemap_entries}}',
                 ['type', 'linkId'],
                 true
             ),
-            '{{%dolphiq_sitemap_entries}}',
+            '{{%copper_sitemap_entries}}',
             ['type', 'linkId'],
             true
         );
@@ -174,6 +174,6 @@ class Install extends Migration
     protected function removeTables()
     {
     // sitemap_sitemaprecord table
-        $this->dropTableIfExists('{{%dolphiq_sitemap_entries}}');
+        $this->dropTableIfExists('{{%copper_sitemap_entries}}');
     }
 }

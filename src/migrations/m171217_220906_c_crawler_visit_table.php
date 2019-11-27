@@ -1,6 +1,6 @@
 <?php
 
-namespace dolphiq\sitemap\migrations;
+namespace copper\sitemap\migrations;
 
 use Craft;
 use craft\db\Migration;
@@ -15,10 +15,10 @@ class m171217_220906_c_crawler_visit_table extends Migration
      */
     public function safeUp()
     {
-        if (!$this->db->tableExists('{{%dolphiq_sitemap_crawler_visits}}')) {
+        if (!$this->db->tableExists('{{%copper_sitemap_crawler_visits}}')) {
 
             $this->createTable(
-                '{{%dolphiq_sitemap_crawler_visits}}',
+                '{{%copper_sitemap_crawler_visits}}',
                 [
                     'id' => $this->primaryKey(),
                     'dateCreated' => $this->dateTime()->notNull(),
@@ -36,7 +36,7 @@ class m171217_220906_c_crawler_visit_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTableIfExists('{{%dolphiq_sitemap_crawler_visits}}');
+        $this->dropTableIfExists('{{%copper_sitemap_crawler_visits}}');
         return true;
     }
 }

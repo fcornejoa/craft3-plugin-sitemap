@@ -4,18 +4,18 @@
  *
  * Craft 3 plugin that provides an easy way to enable and manage a xml sitemap for search engines like Google
  *
- * @link      https://github.com/Dolphiq/craft3-plugin-sitemap
+ * @link      https://github.com/copper/craft3-plugin-sitemap
  * @copyright Copyright (c) 2017 Johan Zandstra
  */
 
-namespace dolphiq\sitemap\controllers;
+namespace copper\sitemap\controllers;
 
 use Craft;
 use craft\db\Query;
 use craft\helpers\UrlHelper;
 use craft\web\Controller;
-use dolphiq\sitemap\models\SitemapEntryModel;
-use dolphiq\sitemap\records\SitemapCrawlerVisit;
+use copper\sitemap\models\SitemapEntryModel;
+use copper\sitemap\records\SitemapCrawlerVisit;
 use DOMDocument;
 use Exception;
 use Jaybizzle\CrawlerDetect\CrawlerDetect;
@@ -169,7 +169,7 @@ class SitemapController extends Controller
                 'alternateLinkCount' => $subQuery,
             ])
             ->from(['{{%sections}} sections'])
-            ->innerJoin('{{%dolphiq_sitemap_entries}} sitemap_entries',
+            ->innerJoin('{{%copper_sitemap_entries}} sitemap_entries',
                 '[[sections.id]] = [[sitemap_entries.linkId]] AND [[sitemap_entries.type]] = "section"')
             ->leftJoin('{{%structures}} structures', '[[structures.id]] = [[sections.structureId]]')
             ->innerJoin('{{%sections_sites}} sections_sites',
@@ -232,7 +232,7 @@ class SitemapController extends Controller
                 'sitemap_entries.priority priority',
             ])
             ->from(['{{%categories}} categories'])
-            ->innerJoin('{{%dolphiq_sitemap_entries}} sitemap_entries',
+            ->innerJoin('{{%copper_sitemap_entries}} sitemap_entries',
                 '[[categories.groupId]] = [[sitemap_entries.linkId]] AND [[sitemap_entries.type]] = "category"')
             ->innerJoin('{{%categorygroups_sites}} categorygroups_sites',
                 '[[categorygroups_sites.groupId]] = [[categories.groupId]] AND [[categorygroups_sites.hasUrls]] = 1')
