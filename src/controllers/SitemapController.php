@@ -162,6 +162,7 @@ class SitemapController extends Controller
                 'elements_sites.uri uri',
                 'elements_sites.dateUpdated dateUpdated',
                 'elements_sites.siteId',
+                'elements_sites.id id',
                 'sitemap_entries.changefreq changefreq',
                 'sitemap_entries.priority priority',
                 'sites.language siteLanguage',
